@@ -5,8 +5,14 @@ body {
 :root {
   --primary-white: #fff;
   --primary-dark: rgba(255, 255, 255, 0);
+  --primary-red: #ef4035;
+  --primary-hover-red: #f33501;
+  --primary-yellow: rgb(229, 255, 0);
 }
-/**** NAVBAR ****/
+/************************************ NAVBAR ************************************/
+nav {
+  z-index: 2;
+}
 .logo {
   width: 50%;
   height: 45%;
@@ -29,10 +35,90 @@ nav ul li {
   max-width: 17.25rem;
   padding: 0 !important;
 }
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    width: 13rem;
+  }
+}
 .navbar-nav > li > a.active,
 .navbar-nav > li > a.active:focus {
   border-top: 0.1875rem solid var(--primary-white);
 }
 .navbar-nav > li > a:hover {
   border-top: 0.1875rem solid var(--primary-white);
+}
+
+/************************************ HEADER ************************************/
+
+.header-wraper {
+  position: relative;
+  background: url(clement-helardot-95YRwf6CNw8-unsplash.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 88.5vh;
+}
+.main-info {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  z-index: 1;
+}
+.main-info h1 {
+  color: var(--primary-yellow);
+  text-shadow: black;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .main-info h1 {
+    font-size: 1.5rem !important;
+  }
+  .typed-text {
+    font-size: 1.3rem !important;
+    color: rgb(229, 255, 0);
+  }
+}
+
+/****** TYPED TEXT *******/
+.typed-text {
+  font-size: 2rem;
+  color: #fff;
+}
+.btn-main-offer {
+  border: 1px solid var(--primary-yellow);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0;
+  padding: 0.625rem 0.75rem 0.75rem 0.75rem;
+  color: #fff;
+  margin-top: 1.2rem;
+}
+.btn-main-offer:hover {
+  color: var(--primary-yellow);
+  transition: 0.2s ease-in-out;
+}
+/****** PARTICLES *******/
+.tsparticles-canvas-el {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .particles-canvas {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .particles-canvas {
+    display: true;
+  }
 }
